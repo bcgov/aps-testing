@@ -6,3 +6,6 @@ variable workers {
     type = number
 }
 
+variable size {
+    type = string
+}

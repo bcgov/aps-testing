@@ -20,10 +20,9 @@
 
 ## Costs
 
-We use `Standard_D2s_v3` VMs which is `$0.096/hour`.
+The default Worker VM size is `Standard_D2s_v3` which is `$0.096/hour`.
 
 Having 60 VMs works out to be about `5.76 / hour`.
-
 
 ## Provisioning the Load Test Farm
 

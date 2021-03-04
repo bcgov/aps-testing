@@ -72,7 +72,8 @@ module "farms" {
     source = "./farm-mod"
     for_each = toset(local.locations)
     
-    workers  = var.workers_per_region
+    workers  = var.workers_per_regions
+    size     = var.worker_size
     location = each.value
 }
 

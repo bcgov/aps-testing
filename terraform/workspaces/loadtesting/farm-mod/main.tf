@@ -26,7 +26,7 @@ resource "azurerm_linux_virtual_machine" "farm" {
   count               = var.workers
   resource_group_name = azurerm_resource_group.testfarm.name
   location            = azurerm_resource_group.testfarm.location
-  size                = "Standard_D2s_v3"
+  size                = var.size
   admin_username      = "adminuser"
   network_interface_ids = [
     azurerm_network_interface.farm[count.index].id,
