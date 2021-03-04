@@ -41,6 +41,10 @@ terraform init
 
 terraform apply -auto-approve
 
+-- You may need to run `terraform apply -auto-approve` twice because of the Main Public IP not getting
+-- handled correctly from the terraform module and the `null_resource.configure_farm` failing
+-- Re-running will destroy `null_resource.configure_farm` and re-create, finishing the rest successfully
+
 -- sometimes need to 'terraform import'
 -- terraform import azurerm_resource_group.testfarm /subscriptions/XX/resourceGroups/testfarm-resources
 
