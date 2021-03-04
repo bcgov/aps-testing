@@ -1,12 +1,15 @@
 
 # API Programme Services Load Testing
 
+The following provisions a set of VMs on Azure for the purposes of using the Locust.io load testing tool.
 ## Prerequisites
 
 * Azure CLI
 * Terraform 0.14+
 
 ## Estimated Timeline
+
+For reference - the timings we see when we spin up 75 VMs.
 
 | Task              | Duration |
 |-------------------|----------|
