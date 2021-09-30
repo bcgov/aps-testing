@@ -109,6 +109,7 @@ function expect_routing_to {
 }
 
 function print_header {
+  echo ""
   echo "---------"
   echo "$1"
   echo "---------"
@@ -182,77 +183,83 @@ test_dr_down
 ## Output for APS
 
 ```
+[00000]
 [00000] ---------
 [00000] BASELINE ALL DOWN - down/down
 [00000] ---------
 [00001] -> SCALED GOLD TO 0 replicas
-[00001] -> SCALED GOLDDR TO 0 replicas
+[00002] -> SCALED GOLDDR TO 0 replicas
 [00002] -> GOLD  : DOWN
-[00003] -> GOLDDR  : DOWN
-[00003] ---------
-[00003] HAPPY PATH - up/up - expect GOLD IP
-[00003] ---------
-[00004] -> SCALED GOLD TO 2 replicas
-[00004] -> SCALED GOLDDR TO 2 replicas
+[00002] -> GOLDDR  : DOWN
+[00002]
+[00002] ---------
+[00002] HAPPY PATH - up/up - expect GOLD IP
+[00002] ---------
+[00002] -> SCALED GOLD TO 2 replicas
+[00003] -> SCALED GOLDDR TO 2 replicas
+[00003] -> GOLD  : DOWN
+[00004] -> GOLD  : DOWN
 [00005] -> GOLD  : DOWN
-[00006] -> GOLD  : DOWN
 [00007] -> GOLD  : DOWN
-[00009] -> GOLD  : DOWN
+[00008] -> GOLD  : DOWN
 [00010] -> GOLD  : DOWN
 [00012] -> GOLD  : DOWN
-[00014] -> GOLD  : DOWN
-[00015] -> GOLD  : UP
+[00013] -> GOLD  : UP
+[00014] -> GOLDDR  : DOWN
 [00016] -> GOLDDR  : DOWN
 [00018] -> GOLDDR  : DOWN
 [00020] -> GOLDDR  : DOWN
-[00022] -> GOLDDR  : DOWN
+[00021] -> GOLDDR  : UP
+[00021] -> GOLD  : EXPECTING..
+[00021] -> SUCCESS!
+[00021]
+[00021] ---------
+[00021] SWITCH TO DR - down/up - expect GOLDDR IP
+[00021] ---------
+[00022] -> SCALED GOLD TO 0 replicas
+[00022] -> SCALED GOLDDR TO 2 replicas
+[00023] -> GOLD  : DOWN
 [00023] -> GOLDDR  : UP
-[00023] -> GOLD  : EXPECTING..
+[00023] -> GOLDDR  : EXPECTING..
 [00023] -> SUCCESS!
+[00023]
 [00023] ---------
-[00023] SWITCH TO DR - down/up - expect GOLDDR IP
+[00023] TOTAL OUTAGE - down/down - expect BOTH IP
 [00023] ---------
-[00024] -> SCALED GOLD TO 0 replicas
-[00025] -> SCALED GOLDDR TO 2 replicas
+[00023] -> SCALED GOLD TO 0 replicas
+[00024] -> SCALED GOLDDR TO 0 replicas
+[00024] -> GOLD  : DOWN
+[00025] -> GOLDDR  : DOWN
+[00025] -> BOTH IPS  : EXPECTING..
+[00025] -> SUCCESS!
+[00025]
+[00025] ---------
+[00025] SWITCH TO PRIMARY - up/up - expect GOLD IP
+[00025] ---------
+[00026] -> SCALED GOLD TO 2 replicas
+[00026] -> SCALED GOLDDR TO 2 replicas
 [00026] -> GOLD  : DOWN
-[00026] -> GOLDDR  : UP
-[00026] -> GOLDDR  : EXPECTING..
-[00026] -> SUCCESS!
-[00026] ---------
-[00026] TOTAL OUTAGE - down/down - expect BOTH IP
-[00026] ---------
-[00026] -> SCALED GOLD TO 0 replicas
-[00027] -> SCALED GOLDDR TO 0 replicas
 [00028] -> GOLD  : DOWN
-[00028] -> GOLDDR  : DOWN
-[00028] -> BOTH IPS  : EXPECTING..
-[00028] -> SUCCESS!
-[00028] ---------
-[00028] SWITCH TO PRIMARY - up/up - expect GOLD IP
-[00028] ---------
-[00029] -> SCALED GOLD TO 2 replicas
-[00029] -> SCALED GOLDDR TO 2 replicas
 [00029] -> GOLD  : DOWN
 [00030] -> GOLD  : DOWN
-[00032] -> GOLD  : DOWN
+[00031] -> GOLD  : DOWN
 [00033] -> GOLD  : DOWN
-[00034] -> GOLD  : DOWN
-[00036] -> GOLD  : DOWN
-[00038] -> GOLD  : DOWN
-[00039] -> GOLD  : UP
-[00040] -> GOLDDR  : DOWN
-[00043] -> GOLDDR  : DOWN
+[00035] -> GOLD  : DOWN
+[00036] -> GOLD  : UP
+[00037] -> GOLDDR  : DOWN
+[00039] -> GOLDDR  : DOWN
+[00041] -> GOLDDR  : DOWN
+[00043] -> GOLDDR  : UP
+[00043] -> GOLD  : EXPECTING..
+[00043] -> SUCCESS!
+[00043]
+[00043] ---------
+[00043] TAKE DR DOWN - up/down - expect GOLD IP
+[00043] ---------
+[00043] -> SCALED GOLD TO 2 replicas
+[00044] -> SCALED GOLDDR TO 0 replicas
+[00044] -> GOLD  : UP
 [00045] -> GOLDDR  : DOWN
-[00046] -> GOLDDR  : UP
-[00046] -> GOLD  : EXPECTING..
-[00046] -> SUCCESS!
-[00046] ---------
-[00046] TAKE DR DOWN - up/down - expect GOLD IP
-[00046] ---------
-[00046] -> SCALED GOLD TO 2 replicas
-[00047] -> SCALED GOLDDR TO 0 replicas
-[00047] -> GOLD  : UP
-[00047] -> GOLDDR  : DOWN
-[00047] -> GOLD  : EXPECTING..
-[00047] -> SUCCESS!
+[00045] -> GOLD  : EXPECTING..
+[00045] -> SUCCESS!
 ```
