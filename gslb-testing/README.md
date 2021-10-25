@@ -245,13 +245,13 @@ function test_dr_maintenance_with_outage {
   repeat 30 .5 expect_routing_to "$NONE"
 }
 
-# baseline_all_down
-# test_happy_path
-# test_switch_to_dr
-# test_total_outage
-# test_switch_to_primary
-# test_dr_down
-# test_dr_then_recovery
+baseline_all_down
+test_happy_path
+test_switch_to_dr
+test_total_outage
+test_switch_to_primary
+test_dr_down
+test_dr_then_recovery
 test_dr_maintenance_with_outage
 
 ' | bash
