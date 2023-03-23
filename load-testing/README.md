@@ -1,18 +1,18 @@
-
 # API Programme Services Load Testing
 
 The following provisions a set of VMs on Azure for the purposes of using the Locust.io load testing tool.
+
 ## Prerequisites
 
-* Azure CLI
-* Terraform 0.14+
+- Azure CLI
+- Terraform 0.14+
 
 ## Estimated Timeline
 
 For reference - the timings we see when we spin up 75 VMs.
 
 | Task              | Duration |
-|-------------------|----------|
+| ----------------- | -------- |
 | terraform apply   | 30 min   |
 | ssl keyscan       | 2 min    |
 | install workers   | 10 min   |
@@ -50,7 +50,7 @@ terraform apply -auto-approve
 
 -- Use the Public IP of the Main VM and Password from Terraform Apply Output
 export IP=""
-ssh -i id_rsa adminuser@$IP
+ssh adminuser@$IP
 
 -- on the Main VM:
 
@@ -103,4 +103,3 @@ python3 imp.py
 ```
 
 > NOTE: In Azure Console, make sure all resources are removed and Resource Groups are deleted.
-

@@ -51,6 +51,13 @@ locals {
         "Canada Central",
         "East US",
         "East US 2",
+        "West US",
+        "West US 2"
+    ]
+    full_locations = [
+        "Canada Central",
+        "East US",
+        "East US 2",
         # "East US 3",
         "West US",
         "West US 2",
@@ -86,6 +93,8 @@ EOT
 
 output "details" {
     value = <<README
+Main VM Public IP: ${module.main.public_ip}
+
 ssh adminuser@${module.main.public_ip}
 
 P: ${module.main.password}
