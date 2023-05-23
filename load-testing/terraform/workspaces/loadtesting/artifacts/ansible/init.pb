@@ -17,5 +17,6 @@
       apt install -y python3-pip
       apt install -y libpython3.8-dev
       pip3 install --upgrade pip
-      pip3 install --upgrade locust
-      echo "\n* hard nofile 200000\n* soft nofile 200000\n" >> /etc/security/limits.conf
+      pip3 install --ignore-installed blinker
+      pip3 install --upgrade locust bs4
+      printf "\n* hard nofile 200000\n* soft nofile 200000\n" >> /etc/security/limits.conf
